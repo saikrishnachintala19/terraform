@@ -31,5 +31,5 @@ variable "cidr" {
 variable "from_port" {
   description = "The EC2 port declaration."
   type        = number
-  default     = 0
+  #default     = 0
 }
