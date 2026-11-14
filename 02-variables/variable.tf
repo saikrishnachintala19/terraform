@@ -1,9 +1,13 @@
 variable "instance_type" {
   description = "The EC2 instance type to provision."
   type        = string
-  #default     = "t3.micro"
-}
+  default     = "t3.micro"
+  validation {
+    condition     = contains(["t3.micro", "t3.small", "t3.large","t3.medium"], var.instance_type)
+    error_message = "Environment must be one of above."
 
+  }
+}
 variable "ami" {
   description = "The EC2 ami declaration."
   type        = string
@@ -31,5 +35,5 @@ variable "cidr" {
 variable "from_port" {
   description = "The EC2 port declaration."
   type        = number
-  #default     = 0
+  default     = 0
 }
