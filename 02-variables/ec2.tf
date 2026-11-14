@@ -1,30 +1,28 @@
-resource "aws_instance" "webapp" {
-  ami = "ami-0eec78ea4cbaaf5bd"
-  instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.web.id]
-  tags = {
-     Name = "roboshop-webap"
-    }
+resource "aws_instance" "mongodb" {
+  ami = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = [aws_security_group.mongodb.id]
+  tags = var.tag_name
 }
-resource "aws_security_group" "webapp" {
-  name        = "webap"
+resource "aws_security_group" "mongodb" {
+  name        = "mongodb"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
-   ingress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-   }
-  
-   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    }
+  ingress {
+    from_port   = var.from_port
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = var.cidr
+  }
 
-    tags = {
-     Name = "roboshop-webaps"
-    }
+  egress {
+    from_port   = var.from_port
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = var.cidr
+  }
+
+  tags = {
+    Name = "roboshop-mongodb"
+  }
 }
