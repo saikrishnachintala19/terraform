@@ -1,13 +1,13 @@
 variable "instance_type" {
   description = "The EC2 instance type to provision."
   type        = string
-  default     = "t3.micro"
+  #default     = "t3.micro"
 }
 
 variable "ami" {
   description = "The EC2 ami declaration."
   type        = string
-  default     = "ami-0eec78ea4cbaaf5bd"
+  #default     = "ami-0055977a6e828a4f4"
 }
 
 variable "tag_name" {
