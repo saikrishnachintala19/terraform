@@ -25,7 +25,7 @@ variable "tag_name" {
   }
 }
 
-variable "cidr" {
+variable "cid" {
   description = "The EC2 cidr declaration."
   type        = list
   default     = ["0.0.0.0/0"]
