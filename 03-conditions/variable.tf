@@ -16,3 +16,14 @@ variable "ami" {
       default = "ami-0055977a6e828a4f4"
   
 }
+
+variable "tag_name" {
+  type= map
+  default= {
+        Name= "roboshop-mongodb"
+        Environment= "dev"
+        Terraform= "True"
+        project= "roboshop"
+        component= "mongodb"
+  }
+}
