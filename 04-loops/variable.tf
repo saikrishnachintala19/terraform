@@ -47,3 +47,8 @@ variable "environment" {
       type = string
       default ="dev"
 }
+
+variable "instances" {
+        type = list
+        default=["mongodb","redis","mysql","rabbitmq","catalogue","user","cart","shipping","peyment","frontend"]  
+}
