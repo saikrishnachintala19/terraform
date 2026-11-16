@@ -1,6 +1,6 @@
 resource "aws_instance" "conditions" {
   ami = var.ami
-  instance_type = var.environment == "dev" ? "t3.micro" : "t3.medium"
+  instance_type = var.environment == "prod" ? "t3.micro" : "t3.medium"
   vpc_security_group_ids = [aws_security_group.conditions.id]
   tags = var.tag_name
 }
