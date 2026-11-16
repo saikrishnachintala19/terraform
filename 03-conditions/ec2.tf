@@ -12,14 +12,14 @@ resource "aws_security_group" "conditions" {
     from_port   = var.from_port
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = var.cidr
+    cidr_blocks = var.cid
   }
 
   egress {
     from_port   = var.from_port
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = var.cidr
+    cidr_blocks = var.cid
   }
 
   tags = {
