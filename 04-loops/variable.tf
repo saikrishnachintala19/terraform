@@ -11,7 +11,7 @@ variable "instance_type" {
 variable "ami" {
   description = "The EC2 ami declaration."
   type        = string
-  #default     = "ami-0055977a6e828a4f4"
+  default     = "ami-0055977a6e828a4f4"
 }
 
 variable "tag_name" {
