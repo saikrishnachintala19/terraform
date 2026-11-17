@@ -1,5 +1,6 @@
 resource "aws_instance" "roboshop" {
-  count = 10
+  #count=10
+  count = length(var.instances)
   ami = "ami-0055977a6e828a4f4"
   instance_type = var.instance_type
   vpc_security_group_ids = [
@@ -26,7 +27,8 @@ resource "aws_security_group" "common" {
     }
 }
   resource "aws_security_group" "roboshop" {
-  count = 10
+  #count=10
+  count = length(var.instances)
   name = "${var.project}-${var.environment}-${var.instances[count.index]}"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
