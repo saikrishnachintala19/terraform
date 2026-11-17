@@ -10,7 +10,7 @@ resource "aws_route53_record" "roboshop" {
 
 resource "aws_route53_record" "frontend" {
   #count = 10
-  count = contains(var.instances,frontend) ? 1 : 0
+  count = contains(var.instances,"frontend") ? 1 : 0
   zone_id = var.route53
   name    = "saikrishna-lab.online"
   type    = "A"
