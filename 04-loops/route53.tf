@@ -16,6 +16,6 @@ resource "aws_route53_record" "frontend" {
   name    = "saikrishna-lab.online"
   type    = "A"
   ttl     = 1
-  records = [aws_instance.roboshop[index(var.instances,frontend)].public_ip]
+  records = [aws_instance.roboshop[index(var.instances,"frontend")].public_ip]
   allow_overwrite = true
 }
