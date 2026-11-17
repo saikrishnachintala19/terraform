@@ -47,7 +47,10 @@ variable "environment" {
       type = string
       default ="dev"
 }
-
+variable "zone-id" {
+      type = string
+      default ="Z0053784XSNYTS2952Q9"
+}
 variable "instances" {
         type = list
         default=["mongodb","redis","mysql","rabbitmq","catalogue","user","cart","shipping","peyment","frontend"]  
