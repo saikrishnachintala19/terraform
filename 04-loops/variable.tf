@@ -55,3 +55,8 @@ variable "instances" {
         type = list
         default=["mongodb","redis","mysql","rabbitmq","catalogue","user","cart","shipping","peyment","frontend"]  
 }
+
+variable "route53" {
+       type = string
+       default = "Z0053784XSNYTS2952Q9"
+}

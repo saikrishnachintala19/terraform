@@ -1,7 +1,8 @@
 resource "aws_route53_record" "roboshop" {
-  zone_id = aws_route53_zone.main.zone_id
-  name    = "dev.example.com"
-  type    = "NS"
-  ttl     = "30"
-  records = aws_route53_zone.dev.name_servers
+  count = 10
+  zone_id = var.route53
+  name    = "${var.instances[count.index]}saikrishna-lab.online"
+  type    = "A"
+  ttl     = 1
+  records = aws_instance.roboshop[count.index].private_ip
 }
