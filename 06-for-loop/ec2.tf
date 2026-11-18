@@ -47,6 +47,6 @@
   }
 
   tags = {
-    Name = "${var.project}-${var.environment}-${{each.key}}"
+    Name = "${var.project}-${var.environment}-${each.key}"
   }
 }
