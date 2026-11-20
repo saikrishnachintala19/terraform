@@ -61,6 +61,38 @@ variable "instances" {
           redis= {
             instance_type= "t3.small"
             port_no= 6379
+          },
+          mysql= {
+            instance_type= "t3.small"
+            port_no= 3306
+          },
+          rabbitmq= {
+            instance_type= "t3.small"
+            port_no= 5672
+          },
+          catalog= {
+            instance_type= "t3.small"
+            port_no= 8080
+          },
+          user= {
+            instance_type= "t3.small"
+            port_no= 8080
+          },
+          cart= {
+            instance_type= "t3.small"
+            port_no= 8080
+          },
+          shipping= {
+            instance_type= "t3.small"
+            port_no= 8080
+          },
+          payment= {
+            instance_type= "t3.small"
+            port_no= 8080
+          },
+          frontend= {
+            instance_type= "t3.small"
+            port_no= 80
           }
        }
 }
