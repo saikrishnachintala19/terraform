@@ -58,7 +58,7 @@ variable "instances" {
             instance_type= "t3.micro"
             port_no= 27017
           },
-          "redis"= {
+          redis= {
             instance_type= "t3.small"
             port_no= 6379
           }
