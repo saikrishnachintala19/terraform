@@ -8,7 +8,7 @@ resource "aws_instance" "roboshop" {
     aws_security_group.roboshop[each.key].id
     ]
   tags = {
-     Name = "${var.project}-${var.environment}-$[each.key]}"
+     Name = "${var.project}-${var.environment}-$[each.key]"
     }
 }
 resource "aws_security_group" "common" {
