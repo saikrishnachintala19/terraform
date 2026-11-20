@@ -7,10 +7,10 @@ resource "aws_security_group" "dynamic" {
   dynamic "ingress" { # terraform will give us block name as special veriable
     for_each = var.dynamic
     content {
-    from_port   = each.value.port
-    to_port     = each.value.port
+    from_port   = ingress.value.port
+    to_port     = ingress.value.port
     protocol    = "tcp"
-    cidr_blocks = each.value.cidr
+    cidr_blocks = ingress.value.cidr
     }
   }
 
