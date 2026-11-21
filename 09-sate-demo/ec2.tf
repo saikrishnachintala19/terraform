@@ -27,4 +27,7 @@ resource "aws_security_group" "states-demo" {
     tags = {
      Name = "roboshop-state-demo"
     }
+    lifecycle {
+    create_before_destroy = true
+  }
 }
