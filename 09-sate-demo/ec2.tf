@@ -7,7 +7,7 @@ resource "aws_instance" "state-demo" {
     }
 }
 resource "aws_security_group" "states-demo" {
-  name        = "states-demo"
+  name        = "states-demo-1"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
    ingress {
