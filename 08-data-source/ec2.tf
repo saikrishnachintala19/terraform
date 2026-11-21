@@ -14,6 +14,7 @@ data "aws_ami" "latest" {
 #   instance_type = "t3.micro"
 # }
 resource "aws_instance" "data-source" {
+  ami= data.aws_ami.latest.id
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.data-source.id]
   tags = {
