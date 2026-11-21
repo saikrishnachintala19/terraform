@@ -1,0 +1,336 @@
+  + resource "aws_instance" "data-source" {
+      + ami                                  = "ami-0055977a6e828a4f4"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "roboshop-web"
+        }
+      + tags_all                             = {
+          + "Name" = "roboshop-web"
+        }
+      + tenancy                              = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_security_group.data-source will be created
+  + resource "aws_security_group" "data-source" {
+      + arn                    = (known after apply)
+      + description            = "Allow TLS inbound traffic and all outbound traffic"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = "data-source"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "data-source"
+        }
+      + tags_all               = {
+          + "Name" = "data-source"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + instance_id       = {
+      + ami                                  = "ami-0055977a6e828a4f4"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + capacity_reservation_specification   = (known after apply)
+      + cpu_options                          = (known after apply)
+      + credit_specification                 = []
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_block_device                     = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + enclave_options                      = (known after apply)
+      + ephemeral_block_device               = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + hibernation                          = null
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_market_options              = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + launch_template                      = []
+      + maintenance_options                  = (known after apply)
+      + metadata_options                     = (known after apply)
+      + monitoring                           = (known after apply)
+      + network_interface                    = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface            = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_dns_name_options             = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + root_block_device                    = (known after apply)
+      + secondary_network_interface          = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + Name = "roboshop-web"
+        }
+      + tags_all                             = {
+          + Name = "roboshop-web"
+        }
+      + tenancy                              = (known after apply)
+      + timeouts                             = null
+      + user_data                            = null
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + volume_tags                          = null
+      + vpc_security_group_ids               = (known after apply)
+    }
+  + security_group_id = {
+      + arn                    = (known after apply)
+      + description            = "Allow TLS inbound traffic and all outbound traffic"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + name                   = "data-source"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + Name = "data-source"
+        }
+      + tags_all               = {
+          + Name = "data-source"
+        }
+      + timeouts               = null
+      + vpc_id                 = (known after apply)
+    }
+  + selected_ami_id   = {
+      + allow_unsafe_filter   = null
+      + architecture          = "x86_64"
+      + arn                   = "arn:aws:ec2:us-east-1::image/ami-0055977a6e828a4f4"
+      + block_device_mappings = [
+          + {
+              + device_name  = "/dev/sda1"
+              + ebs          = {
+                  + delete_on_termination      = "true"
+                  + encrypted                  = "false"
+                  + iops                       = "3000"
+                  + snapshot_id                = "snap-09172f36744a05817"
+                  + throughput                 = "125"
+                  + volume_initialization_rate = "0"
+                  + volume_size                = "20"
+                  + volume_type                = "gp3"
+                }
+              + no_device    = ""
+              + virtual_name = ""
+            },
+        ]
+      + boot_mode             = "uefi-preferred"
+      + creation_date         = "2026-10-19T12:44:17.000Z"
+      + deprecation_time      = "2028-10-19T12:44:17.000Z"
+      + description           = "Redhat-9-DevOps-Practice"
+      + ena_support           = true
+      + executable_users      = null
+      + filter                = [
+          + {
+              + name   = "name"
+              + values = [
+                  + "Redhat-9-DevOps-Practice",
+                ]
+            },
+        ]
+      + hypervisor            = "xen"
+      + id                    = "ami-0055977a6e828a4f4"
+      + image_id              = "ami-0055977a6e828a4f4"
+      + image_location        = "973714476881/Redhat-9-DevOps-Practice"
+      + image_owner_alias     = ""
+      + image_type            = "machine"
+      + imds_support          = ""
+      + include_deprecated    = false
+      + kernel_id             = ""
+      + last_launched_time    = ""
+      + most_recent           = true
+      + name                  = "Redhat-9-DevOps-Practice"
+      + name_regex            = null
+      + owner_id              = "973714476881"
+      + owners                = [
+          + "973714476881",
+        ]
+      + platform              = ""
+      + platform_details      = "Red Hat Enterprise Linux"
+      + product_codes         = []
+      + public                = true
+      + ramdisk_id            = ""
+      + region                = "us-east-1"
+      + root_device_name      = "/dev/sda1"
+      + root_device_type      = "ebs"
+      + root_snapshot_id      = "snap-09172f36744a05817"
+      + sriov_net_support     = "simple"
+      + state                 = "available"
+      + state_reason          = {
+          + code    = "UNSET"
+          + message = "UNSET"
+        }
+      + tags                  = {}
+      + timeouts              = null
+      + tpm_support           = ""
+      + uefi_data             = null
+      + usage_operation       = "RunInstances:0010"
+      + virtualization_type   = "hvm"
+    }
+╷
+│ Warning: Deprecated value used
+│
+│   on outputs.tf line 12, in output "instance_id":
+│   12:   value = aws_instance.data-source
+│
+│   The deprecation originates from aws_instance.data-source.network_interface
+│
+│ network_interface is deprecated. To specify the primary network interface, use primary_network_interface instead. To attach additional network interfaces, use
+│ the aws_network_interface_attachment resource.
+│
+│ (and one more similar warning elsewhere)
+╵
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
