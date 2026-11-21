@@ -21,7 +21,7 @@ resource "aws_security_group" "dynamic" {
     cidr_blocks = var.cid
   }
 
-  tags = {
+    tags = {
     Name = "dynamic demo"
   }
 }
