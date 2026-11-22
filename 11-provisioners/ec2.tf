@@ -1,0 +1,33 @@
+resource "aws_instance" "provisioners" {
+  ami = "ami-0eec78ea4cbaaf5bd"
+  instance_type = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.provisioners.id]
+  provisioner "local-exec" {
+  command     = "echo The server IP is ${self.private_ip} > inventory.ini"
+  }
+  tags = {
+     Name = "roboshop-provisioners"
+    }
+}
+resource "aws_security_group" "provisioners" {
+  name        = "provisioners"
+  description = "Allow TLS inbound traffic and all outbound traffic"
+
+   ingress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+   }
+  
+   egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    }
+
+    tags = {
+     Name = "roboshop-provisioners"
+    }
+}
