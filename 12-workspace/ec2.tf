@@ -1,5 +1,5 @@
 resource "aws_instance" "workspace-demo" {
-  ami = "ami-0eec78ea4cbaaf5bd"
+  ami = "ami-0055977a6e828a4f4"
   instance_type = lookup(var.instance_type,terraform.workspace)
   vpc_security_group_ids = [aws_security_group.workspace-demo.id]
   tags = {
@@ -7,7 +7,7 @@ resource "aws_instance" "workspace-demo" {
     }
 }
 resource "aws_security_group" "workspace-demo" {
-  name        = "workspace-demo"
+  name        = "workspace-demo-${terraform.workspace}"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
    ingress {
