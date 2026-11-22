@@ -1,11 +1,9 @@
 variable "instance_type" {
-  description = "The EC2 instance type to provision."
-  type        = string
-  default     = "t3.micro"
-  validation {
-    condition     = contains(["t3.micro", "t3.small", "t3.large","t3.medium"], var.instance_type)
-    error_message = "Environment must be one of above."
-
+  type = map
+  default = {
+    dev = "t3.small"
+    prod= "t3.medium"
+    uat= "t3.micro"
   }
 }
 # variable "ami" {
