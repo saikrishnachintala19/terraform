@@ -4,11 +4,14 @@ resource "aws_instance" "provisioners" {
   vpc_security_group_ids = [aws_security_group.provisioners.id]
   provisioner "local-exec" {
   command     = "echo The server IP is ${self.private_ip} > inventory.ini"
+  }
   provisioner "local-exec" {
   command     = "echo The server IP is ${self.public_ip} > inventory.ini"
   }
   provisioner "local-exec" {
   command     = "echo The server IP created"
+  }
+
   tags = {
      Name = "roboshop-provisioners"
     }
