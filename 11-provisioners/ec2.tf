@@ -22,14 +22,23 @@ resource "aws_instance" "provisioners" {
     host        = self.public_ip
   }
 
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo yum update -y",
+  #     "sudo yum install -y nginx",
+  #     "sudo systemctl start nginx",
+  #   ]
+  # }
+  provisioner "file" {
+    source      = "bootstarp.sh"
+    destination = "/tmp/bootstarp.sh"
+  }
   provisioner "remote-exec" {
-    inline = [
-      "sudo yum update -y",
-      "sudo yum install -y nginx",
-      "sudo systemctl start nginx",
+   inline = [ 
+     chomd -x /tmp/bootstarp.sh,
+     "sudo sh /tmp/bootstarp.sh"
     ]
   }
-
   tags = {
      Name = "roboshop-provisioners"
     }
