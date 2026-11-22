@@ -1,5 +1,5 @@
 resource "aws_instance" "provisioners" {
-  ami = "ami-0eec78ea4cbaaf5bd"
+  ami = "ami-0055977a6e828a4f4"
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.provisioners.id]
   provisioner "local-exec" {
