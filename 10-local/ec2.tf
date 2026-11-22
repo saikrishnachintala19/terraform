@@ -2,7 +2,7 @@ resource "aws_instance" "local" {
   ami                    = var.ami
   instance_type          = local.instance_type
   vpc_security_group_ids = [aws_security_group.local.id]
-  tags                   = local.name
+  tags                   = local.ec2_tags
 }
 resource "aws_security_group" "local" {
   name        = local.tg_Name
@@ -22,5 +22,5 @@ resource "aws_security_group" "local" {
     cidr_blocks = var.cidr
   }
 
-  tags = local.name
+  tags = local.ec2_tags
 }
