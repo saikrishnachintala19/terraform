@@ -6,7 +6,7 @@ resource "aws_instance" "provisioners" {
   command     = "echo The server IP is ${self.private_ip} > inventory.ini"
   }
   provisioner "local-exec" {
-  command     = "echo The server IP is ${self.public_ip} > inventory.ini"
+  command     = "echo The server IP is ${self.public_ip} >> inventory.ini"
   }
   provisioner "local-exec" {
   command     = "echo The server IP created"
