@@ -35,7 +35,7 @@ resource "aws_instance" "provisioners" {
   }
   provisioner "remote-exec" {
    inline = [ 
-     chomd -x /tmp/bootstarp.sh,
+     "chmod -x /tmp/bootstarp.sh",
      "sudo sh /tmp/bootstarp.sh"
     ]
   }
