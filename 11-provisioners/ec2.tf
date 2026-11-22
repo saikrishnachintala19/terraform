@@ -11,6 +11,10 @@ resource "aws_instance" "provisioners" {
   provisioner "local-exec" {
   command     = "echo The server IP created"
   }
+  provisioner "local-exec" {
+   when = destroy
+   command     = "echo The server IP going to be destory"
+  }
 
   tags = {
      Name = "roboshop-provisioners"
