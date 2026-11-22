@@ -7,7 +7,7 @@ terraform {                         # Starts Terraform's own settings.
   }                                 # Ends the required_providers block. 
   backend "s3" {
     bucket       = "krishna-first-testbucket"
-    key          = "workspace.tfstate"
+    key          = "krishna-first-testbucket.tfstate"
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true
