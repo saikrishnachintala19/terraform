@@ -15,19 +15,19 @@ variable "ami" {
 }
 
 variable "tag_name" {
-  type= map
-  default= {
-        Name= "roboshop-local"
-        Environment= "dev"
-        Terraform= "True"
-        project= "roboshop"
-        component= "local"
+  type = map(any)
+  default = {
+    Name        = "roboshop-local"
+    Environment = "dev"
+    Terraform   = "True"
+    project     = "roboshop"
+    component   = "local"
   }
 }
 
 variable "cidr" {
   description = "The EC2 cidr declaration."
-  type        = list
+  type        = list(any)
   default     = ["0.0.0.0/0"]
 }
 

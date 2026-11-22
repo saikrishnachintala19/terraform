@@ -1,11 +1,11 @@
 resource "aws_instance" "local" {
-  ami = var.ami
-  instance_type = local.instance_type
+  ami                    = var.ami
+  instance_type          = local.instance_type
   vpc_security_group_ids = [aws_security_group.local.id]
-  tags = local.name.Name
+  tags                   = local.name
 }
 resource "aws_security_group" "local" {
-  name        = local.name
+  name        = local.tg_Name
   description = "Allow TLS inbound traffic and all outbound traffic"
 
   ingress {
@@ -22,7 +22,5 @@ resource "aws_security_group" "local" {
     cidr_blocks = var.cidr
   }
 
-  tags = {
-    Name = "roboshop-local"
-  }
+  tags = local.name
 }
