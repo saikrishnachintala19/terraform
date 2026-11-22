@@ -15,6 +15,20 @@ resource "aws_instance" "provisioners" {
    when = destroy
    command     = "echo The server IP going to be destory"
   }
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    password = "DevOps321"
+    host        = self.public_ip
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo yum update -y",
+      "sudo yum install -y nginx",
+      "sudo systemctl start nginx",
+    ]
+  }
 
   tags = {
      Name = "roboshop-provisioners"
